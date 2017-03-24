@@ -3,7 +3,10 @@
 <article>
   <header class="bg-gold helvetica">
     <div class="mw9 center pa4 pt5-ns ph7-l">
-      <time class="f6 mb2 dib ttu tracked"><small>{{ .Date.Format "Mon, Jan 2, 2006" }} - Read in {{ .ReadingTime }} minutes</small></time>
+      <div class="flex justify-between grey-3">
+      <time class="f6 mb2 dib ttu tracked"><small>{{ .Date.Format "Mon, Jan 2, 2006" }}</small></time>
+      <p class="ttl">Read in {{ .ReadingTime }} minutes</p>
+      </div>
       <h3 class="f3 f1-m f-headline-l measure-narrow lh-title mv0">
         <span class="bg-black-90 lh-copy white pa1 tracked-tight">
           {{.Title}}
@@ -24,8 +27,6 @@
 </article>
 
 <style>
-@import './_normalize';
-
 .bl {
     border-left-style: solid;
     border-left-width: 1px;
