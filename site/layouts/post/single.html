@@ -1,210 +1,216 @@
-{{ partial "head" . }}
-{{ partial "nav" . }}
+{{ partial "head" . }} {{ partial "nav" . }}
 <article>
-  <header class="bg-gold helvetica">
-    <div class="mw9 center pa4 pt5-ns ph7-l">
-      <div class="flex justify-between grey-3">
-      <time class="f6 mb2 dib ttu tracked"><small>{{ .Date.Format "Mon, Jan 2, 2006" }}</small></time>
-      <p class="ttl">Read in {{ .ReadingTime }} minutes</p>
-      </div>
-      <h3 class="f3 f1-m f-headline-l measure-narrow lh-title mv0">
-        <span class="bg-black-90 lh-copy white pa1 tracked-tight">
+    <header class="bg-gradient helvetica">
+        <div class="mw9 center pa4 pt5-ns ph7-l">
+            <div class="flex justify-between grey-3">
+                <time class="f6 mb2 dib ttu tracked"><small>{{ .Date.Format "Mon, Jan 2, 2006" }}</small></time>
+                <p>Read in {{ .ReadingTime }} minutes</p>
+            </div>
+            <h3 class="f3 f1-m f-headline-l measure-narrow lh-title mv0">
+                <span class="bg-black-90 lh-copy white pa1 tracked-tight">
           {{.Title}}
         </span>
-      </h3>
-      <h5 class="f6 ttu tracked black-80">By: Oka Brionz</h5>
+            </h3>
+            <h5 class="f6 ttu tracked black-80">By: Oka Brionz</h5>
+        </div>
+    </header>
+    <div class="pa4 ph7-l georgia mw9-l center">
+        <p class="f5 f3-ns lh-copy measure georgia">
+            {{ .Description }}
+        </p>
+        <p class="f5 f4-ns lh-copy measure mb4">
+            {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }} {{ .Content }}
+        </p>
     </div>
-  </header>
-  <div class="pa4 ph7-l georgia mw9-l center">
-      <p class="f5 f3-ns lh-copy measure georgia">
-        {{ .Description }}
-      </p>
-    <p class="f5 f4-ns lh-copy measure mb4">
-    {{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
-      {{ .Content }}
-  </p>
-  </div>
 </article>
 
 <style>
-.bl {
-    border-left-style: solid;
-    border-left-width: 1px;
-}
-
-.b--gold {
-    border-color: #ffb700;
-}
-
-.bw1 {
-    border-width: .125rem;
-}
-
-.dib {
-    display: inline-block;
-}
-
-.sans-serif {
-    font-family: -apple-system,
-                 BlinkMacSystemFont,
-                 'avenir next',
-                 avenir,
-                 'helvetica neue',
-                 helvetica,
-                 ubuntu,
-                 roboto,
-                 noto,
-                 'segoe ui',
-                 arial,
-                 sans-serif;
-}
-
-.georgia {
-    font-family: georgia, serif;
-}
-
-.i {
-    font-style: italic;
-}
-
-.fw1 {
-    font-weight: 100;
-}
-
-.tracked {
-    letter-spacing: .1em;
-}
-
-.tracked-tight {
-    letter-spacing: -.05em;
-}
-
-.lh-title {
-    line-height: 1.25;
-}
-
-.lh-copy {
-    line-height: 1.5;
-}
-
-.mw9 {
-    max-width: 96rem;
-}
-
-.black-80 {
-    color: rgba(0, 0, 0, .8);
-}
-
-.white {
-    color: #fff;
-}
-
-.bg-black-90 {
-    background-color: rgba(0, 0, 0, .9);
-}
-
-.bg-gold {
-    background-color: #ffb700;
-}
-
-.pa1 {
-    padding: .25rem;
-}
-
-.pa4 {
-    padding: 2rem;
-}
-
-.pl4 {
-    padding-left: 2rem;
-}
-
-.mb2 {
-    margin-bottom: .5rem;
-}
-
-.mb4 {
-    margin-bottom: 2rem;
-}
-
-.mv0 {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.ttu {
-    text-transform: uppercase;
-}
-
-.f2 {
-    font-size: 2.25rem;
-}
-
-.f3 {
-    font-size: 1.5rem;
-}
-
-.f5 {
-    font-size: 1rem;
-}
-
-.f6 {
-    font-size: .875rem;
-}
-
-.measure {
-    max-width: 30em;
-}
-
-.measure-narrow {
-    max-width: 20em;
-}
-
-.center {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-@media screen and (min-width: 30em) {
-    .pt5-ns {
-        padding-top: 4rem;
+    .bl {
+        border-left-style: solid;
+        border-left-width: 1px;
     }
 
-    .f3-ns {
-        font-size: 1.5rem;
+    .b--gold {
+        border-color: #ffb700;
     }
 
-    .f4-ns {
-        font-size: 1.25rem;
+    .bw1 {
+        border-width: .125rem;
     }
 
-    .f5-ns {
-        font-size: 1rem;
+    .dib {
+        display: inline-block;
     }
-}
 
-@media screen and (min-width: 30em) and (max-width: 60em) {
-    .f1-m {
-        font-size: 2rem;
+    .sans-serif {
+        font-family: -apple-system,
+        BlinkMacSystemFont,
+        'avenir next',
+        avenir,
+        'helvetica neue',
+        helvetica,
+        ubuntu,
+        roboto,
+        noto,
+        'segoe ui',
+        arial,
+        sans-serif;
     }
-}
 
-@media screen and (min-width: 60em) {
-    .mw9-l {
+    .georgia {
+        font-family: georgia, serif;
+    }
+
+    .i {
+        font-style: italic;
+    }
+
+    .fw1 {
+        font-weight: 100;
+    }
+
+    .tracked {
+        letter-spacing: .1em;
+    }
+
+    .tracked-tight {
+        letter-spacing: -.05em;
+    }
+
+    .lh-title {
+        line-height: 1.25;
+    }
+
+    .lh-copy {
+        line-height: 1.5;
+    }
+
+    .mw9 {
         max-width: 96rem;
     }
 
-    .ph7-l {
-        padding-left: 16rem;
-        padding-right: 16rem;
+    .black-80 {
+        color: rgba(0, 0, 0, .8);
     }
 
-    .f-headline-l {
-        font-size: 3.5rem;
+    .white {
+        color: #fff;
     }
-}
 
+    .bg-black-90 {
+        background-color: rgba(0, 0, 0, .9);
+    }
+
+    .bg-gold {
+        background-color: #ffb700;
+    }
+
+    .bg-gradient {
+        background: #c21500;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #c21500, #ffc500);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #c21500, #ffc500);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+
+    .pa1 {
+        padding: .25rem;
+    }
+
+    .pa4 {
+        padding: 2rem;
+    }
+
+    .pl4 {
+        padding-left: 2rem;
+    }
+
+    .mb2 {
+        margin-bottom: .5rem;
+    }
+
+    .mb4 {
+        margin-bottom: 2rem;
+    }
+
+    .mv0 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .ttu {
+        text-transform: uppercase;
+    }
+
+    .f2 {
+        font-size: 2.25rem;
+    }
+
+    .f3 {
+        font-size: 1.5rem;
+    }
+
+    .f5 {
+        font-size: 1rem;
+    }
+
+    .f6 {
+        font-size: .875rem;
+    }
+
+    .measure {
+        max-width: 30em;
+    }
+
+    .measure-narrow {
+        max-width: 20em;
+    }
+
+    .center {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    @media screen and (min-width: 30em) {
+        .pt5-ns {
+            padding-top: 4rem;
+        }
+
+        .f3-ns {
+            font-size: 1.5rem;
+        }
+
+        .f4-ns {
+            font-size: 1.25rem;
+        }
+
+        .f5-ns {
+            font-size: 1rem;
+        }
+    }
+
+    @media screen and (min-width: 30em) and (max-width: 60em) {
+        .f1-m {
+            font-size: 2rem;
+        }
+    }
+
+    @media screen and (min-width: 60em) {
+        .mw9-l {
+            max-width: 96rem;
+        }
+
+        .ph7-l {
+            padding-left: 16rem;
+            padding-right: 16rem;
+        }
+
+        .f-headline-l {
+            font-size: 3.5rem;
+        }
+    }
 </style>
 
-{{ partial "blog" . }}
-{{ partial "footer" . }}
+{{ partial "blog" . }} {{ partial "footer" . }}
