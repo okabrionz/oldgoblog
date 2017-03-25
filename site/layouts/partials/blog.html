@@ -3,7 +3,7 @@
 
 		<h2 class="f2 b lh-title mb3">Latests stories</h1>
 
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
+		<div class="bgi w-100 flex-ns mhn1-ns flex-wrap mb3">
 			{{ range where .Data.Pages "Type" "post" }}
 				<div class="ph1-ns w-50-ns flex">
 					{{ .Render "li" }}
@@ -17,3 +17,6 @@
 
 	</div>
 </div>
+<style>
+.bgi {background: url({{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }});}
+</style>
