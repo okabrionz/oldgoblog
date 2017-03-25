@@ -18,5 +18,7 @@
 	</div>
 </div>
 <style>
-.bgi {background: url({{ if .Params.image }}<img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }});}
+.bgi {
+	background: url({{ .Params.image }});
+}
 </style>
