@@ -5,7 +5,6 @@
 
 		<div class="bt bb b--black-10">
 			{{ range where .Data.Pages "Type" "post" }}
-				<div class="ph1-ns w-50-ns flex">
 					{{ .Render "li" }}
 				</div>
 			{{ end }}
