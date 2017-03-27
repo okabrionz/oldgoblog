@@ -206,5 +206,11 @@
 
 </style>
 
-{{ partial "blog" . }}
+<div class="mw7 center">
+  <ul class="bt bb b--black-10">
+      {{ range .Data.Pages }}
+            {{ .Render "li"}}
+      {{ end }}
+  </ul>
+</div>
 {{ partial "footer" . }}
